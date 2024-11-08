@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-function PlantCard() {
+function PlantCard({ data }) {
   const [images, setImages] = useState("");
   const [names, setNames] = useState("");
+
   return (
     <li className="card" data-testid="plant-item">
       <img src={images} alt={"plant name"} />

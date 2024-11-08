@@ -3,7 +3,7 @@ import PlantCard from "./PlantCard";
 
 function PlantList() {
   const [data, setData] = useState([]);
-  console.log(data);
+
   useEffect(() => {
     fetch("http://localhost:6001/plants")
       .then((res) => res.json())
@@ -12,7 +12,13 @@ function PlantList() {
       });
   }, []);
 
-  return <ul className="cards">{<PlantCard />}</ul>;
+  return (
+    <ul className="cards">
+      {data.map((item) => {
+        return <PlantCard key={item.id} image={item.image} name={item.name} />;
+      })}
+    </ul>
+  );
 }
 
 export default PlantList;
