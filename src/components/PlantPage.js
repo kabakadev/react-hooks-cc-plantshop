@@ -12,10 +12,14 @@ function PlantPage() {
       .then((data) => {
         setData(data);
       });
-  }, []);
+  }, [setData]);
+
+  function addPlant(newPlant) {
+    setData([...data, newPlant]);
+  }
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm addPlant={addPlant} />
       <Search />
       <PlantList data={data} />
     </main>

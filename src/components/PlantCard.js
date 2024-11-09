@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-function PlantCard({ image, name }) {
+function PlantCard({ image, name, price }) {
   return (
     <li className="card" data-testid="plant-item">
       <img src={image} alt={"plant name"} />
       <h4>{name}</h4>
-      <p>Price: {"plant price"}</p>
+      <p>Price: {price}</p>
       {true ? (
         <button className="primary">In Stock</button>
       ) : (

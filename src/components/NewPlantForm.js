@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 
-function NewPlantForm() {
+function NewPlantForm({ addPlant }) {
   const [plantName, setPlantName] = useState("");
   const [plantUrl, setPlantUrl] = useState("");
   const [plantNum, setPlantNum] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+    const newPlant = {
+      id: Date.now(),
+      name: plantName,
+      image: plantUrl,
+      price: plantNum,
+    };
+    console.log(newPlant);
+    addPlant(newPlant);
   }
   return (
     <div className="new-plant-form">
