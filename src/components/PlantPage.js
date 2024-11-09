@@ -17,7 +17,7 @@ function PlantPage() {
     <main>
       <NewPlantForm />
       <Search />
-      <PlantList />
+      <PlantList data={data} />
     </main>
   );
 }
