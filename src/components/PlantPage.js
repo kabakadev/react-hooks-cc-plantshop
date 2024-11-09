@@ -13,7 +13,7 @@ function PlantPage() {
       .then((data) => {
         setData(data);
       });
-  }, [setData]);
+  }, []);
 
   let newData = data.filter((item) => item.name.includes(search));
 
