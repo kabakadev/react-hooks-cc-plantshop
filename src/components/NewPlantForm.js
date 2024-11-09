@@ -8,13 +8,19 @@ function NewPlantForm({ addPlant }) {
   function handleSubmit(e) {
     e.preventDefault();
     const newPlant = {
-      id: Date.now(),
       name: plantName,
       image: plantUrl,
-      price: plantNum,
+      price: parseFloat(plantNum),
     };
-    console.log(newPlant);
-    addPlant(newPlant);
+    fetch("http://localhost:6001/plants", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPlant),
+    })
+      .then((res) => res.json())
+      .then((data) => addPlant(data));
   }
   return (
     <div className="new-plant-form">
@@ -25,6 +31,7 @@ function NewPlantForm({ addPlant }) {
           name="name"
           placeholder="Plant name"
           value={plantName}
+          required
           onChange={(e) => setPlantName(e.target.value)}
         />
         <input
@@ -32,6 +39,7 @@ function NewPlantForm({ addPlant }) {
           name="image"
           placeholder="Image URL"
           value={plantUrl}
+          required
           onChange={(e) => setPlantUrl(e.target.value)}
         />
         <input
@@ -40,6 +48,7 @@ function NewPlantForm({ addPlant }) {
           step="0.01"
           placeholder="Price"
           value={plantNum}
+          required
           onChange={(e) => setPlantNum(e.target.value)}
         />
         <button type="submit">Add Plant</button>
