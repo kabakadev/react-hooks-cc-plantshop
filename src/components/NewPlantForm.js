@@ -17,14 +17,14 @@ function NewPlantForm() {
           name="name"
           placeholder="Plant name"
           value={plantName}
-          onChange={setPlantName}
+          onChange={(e) => setPlantName(e.target.value)}
         />
         <input
           type="text"
           name="image"
           placeholder="Image URL"
           value={plantUrl}
-          onChange={setPlantUrl}
+          onChange={(e) => setPlantUrl(e.target.value)}
         />
         <input
           type="number"
@@ -32,7 +32,7 @@ function NewPlantForm() {
           step="0.01"
           placeholder="Price"
           value={plantNum}
-          onChange={setPlantNum}
+          onChange={(e) => setPlantNum(e.target.value)}
         />
         <button type="submit">Add Plant</button>
       </form>
