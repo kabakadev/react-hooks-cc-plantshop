@@ -4,6 +4,8 @@ function NewPlantForm() {
   const [plantName, setPlantName] = useState("");
   const [plantUrl, setPlantUrl] = useState("");
   const [plantNum, setPlantNum] = useState("");
+
+  function handleSubmit() {}
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
