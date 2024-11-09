@@ -15,6 +15,8 @@ function PlantPage() {
       });
   }, [setData]);
 
+  let newData = data.filter((item) => item.name.includes(search));
+
   function addPlant(newPlant) {
     setData([...data, newPlant]);
   }
@@ -22,7 +24,7 @@ function PlantPage() {
     <main>
       <NewPlantForm addPlant={addPlant} />
       <Search search={search} setSearch={setSearch} />
-      <PlantList data={data} />
+      <PlantList data={newData} />
     </main>
   );
 }
