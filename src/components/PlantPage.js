@@ -15,7 +15,9 @@ function PlantPage() {
       });
   }, []);
 
-  let newData = data.filter((item) => item.name.includes(search));
+  let newData = data.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   function addPlant(newPlant) {
     setData([...data, newPlant]);

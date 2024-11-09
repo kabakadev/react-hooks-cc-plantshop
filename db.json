@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "cactus",
+      "image": "https://cdn.shopify.com/s/files/1/0968/5384/files/Cactus-spines-are-modified-leaves-jpj_480x480.jpg?v=1724131342",
+      "price": 12.98,
+      "id": 8
     }
   ]
 }
