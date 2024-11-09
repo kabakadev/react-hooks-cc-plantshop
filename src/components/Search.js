@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-function Search() {
-  const [search, setSearch] = useState("");
+function Search({ search, setSearch }) {
   return (
     <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>
